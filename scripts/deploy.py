@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 from string import Template
 
@@ -7,7 +8,11 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 filename = sys.argv[1]
-#print(f"Filename provided: {filename}")
+
+folder = os.path.basename(os.path.dirname(os.path.abspath((filename))))
+
+if(folder == 'txt'):
+    folder = ''
 
 date, summary, keywords, title = None, None, None, None
 
@@ -24,11 +29,6 @@ with open(filename, 'r') as file:
         elif line.startswith('ti: '):
             title = line[len('ti: '):].strip()
 
-#print(title)
-#print(summary)
-#print(keywords)
-#print(date)
-
 content_lines = []
 recording = False
 
@@ -43,9 +43,10 @@ with open(filename, 'r') as file:
             content_lines.append(line.rstrip('\n'))
 
 content = '\n'.join(content_lines)
-#print(content)
 
-with open('../templates/webpage.html', 'r') as f:
+content = '\n<p>' + re.sub(r'\n{2,}', '</p>\n\n<p>', content.strip()) + '</p>\n'
+
+with open(os.path.expanduser('~/.marty/') + 'templates/webpage.html', 'r') as f:
     template_content = f.read()
 
 template = Template(template_content)
@@ -59,5 +60,5 @@ if filename.endswith(".txt"):
 else:
     outputfile = filename
 
-with open(os.path.expanduser('~/marty-stew.github.io/docs/') + outputfile + '.html', 'w') as f:
+with open(os.path.expanduser('~/.marty/docs/') + folder + '/' + outputfile + '.html', 'w') as f:
     f.write(result)
