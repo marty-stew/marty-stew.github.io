@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+from datetime import datetime
 from string import Template
 
 if len(sys.argv) < 2:
@@ -19,15 +20,15 @@ date, summary, keywords, title = None, None, None, None
 with open(filename, 'r') as file:
     for line in file:
         if line.startswith('date: '):
-            date = line[len('date: '):].strip()
+            datecreated = line[len('date: '):].strip()
         elif line.startswith('desc: '):
-            summary = line[len('desc: '):].strip()
-        elif line.startswith('ti: '):
-            title = line[len('ti: '):].strip()
+            description = line[len('desc: '):].strip()
         elif line.startswith('kw: '):
             keywords = line[len('kw: '):].strip()
         elif line.startswith('ti: '):
             title = line[len('ti: '):].strip()
+
+datemodified = datetime.now().isoformat()
 
 content_lines = []
 recording = False
@@ -51,7 +52,7 @@ with open(os.path.expanduser('~/.marty/') + 'templates/webpage.html', 'r') as f:
 
 template = Template(template_content)
 
-result = template.substitute(title=title, content=content)
+result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, keywords=keywords, title=title)
 
 filename = os.path.basename(filename)
 
