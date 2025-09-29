@@ -15,6 +15,10 @@ folder = os.path.basename(os.path.dirname(os.path.abspath((filename))))
 if(folder == 'txt'):
     folder = ''
 
+section = ''
+if(folder == 'juliette'):
+    section = f'<a href="/{folder}/">Juliette:</a> '
+
 date, summary, keywords, title = None, None, None, None
 
 with open(filename, 'r') as file:
@@ -52,7 +56,7 @@ with open(os.path.expanduser('~/.marty/') + 'templates/webpage.html', 'r') as f:
 
 template = Template(template_content)
 
-result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, keywords=keywords, title=title)
+result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, keywords=keywords, section=section, title=title)
 
 filename = os.path.basename(filename)
 

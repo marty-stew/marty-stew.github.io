@@ -1,12 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #fff;
-  color: #000;
+    background-color: #fff;
+    color: #1f2328;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+header, main, footer {
+    max-width: 800px;
+    width: 100%;
+}
+
+main {
+    font-size: 20px;
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
+    body {
+	background-color: #0d1117;
+	color: #f0f6fc;
+    }
 }
