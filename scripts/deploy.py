@@ -16,10 +16,12 @@ if(folder == 'txt'):
     folder = ''
 
 section = ''
+sectionlink = ''
 if(folder == 'juliette'):
-    section = f'<a href="/{folder}/">Juliette:</a> '
+    section = 'Juliette'    
+    sectionlink = f'<a href="/{folder}/">Juliette</a>: '
 
-date, summary, keywords, title = None, None, None, None
+date, summary, title = None, None, None
 
 with open(filename, 'r') as file:
     for line in file:
@@ -27,8 +29,6 @@ with open(filename, 'r') as file:
             datecreated = line[len('date: '):].strip()
         elif line.startswith('desc: '):
             description = line[len('desc: '):].strip()
-        elif line.startswith('kw: '):
-            keywords = line[len('kw: '):].strip()
         elif line.startswith('ti: '):
             title = line[len('ti: '):].strip()
 
@@ -56,7 +56,7 @@ with open(os.path.expanduser('~/.marty/') + 'templates/webpage.html', 'r') as f:
 
 template = Template(template_content)
 
-result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, keywords=keywords, section=section, title=title)
+result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, section=section, sectionlink=sectionlink, title=title)
 
 filename = os.path.basename(filename)
 
