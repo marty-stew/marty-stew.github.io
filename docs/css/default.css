@@ -4,72 +4,72 @@
     box-sizing: border-box;
 }
 
+html {
+    color-scheme: light dark;
+}
+
 body {
-    background-color: #fff;
-    color: #030712;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
-    padding: 30px;
+    font-family: system-ui;
+    font-size: 1.5rem;
+    line-height: 1.75;
 }
 
 a {
-    color: #00598a;
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus, a:active {
     opacity: 0.8;
 }
 
-header, main, footer {
-    max-width: 830px;
+main {
+    margin-inline: auto;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    max-width: min(70ch, 100% - 4rem);
+}
+
+header, article, footer {
     width: 100%;
 }
 
 header {
-    display: table;
-    border-bottom: 1px solid #d4d4d4;
-    padding-bottom: 5px;    
+    border-bottom: 1px solid #a9a9a9;    
+    display: inline-block;
+    padding-bottom: 7px;
+    padding-right: 30px;
+    width: auto;
 }
 
 header h1 {
-    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1.25rem;    
+    justify-content: flex-start;
 }
 
-header h1 a {
-    /* color: #d4d4d4; */
+header h1 .sectionTitle {
+    padding-right: 7px;
 }
 
-header h1 .subtitle {
-    margin-left: 5px;
+article {
+    padding-bottom: 1em;    
 }
 
-main {
-    font-size: 18px;
-}
-
-p {
-    line-height: 28px;
-    margin-top: 16px;
+article p {
+    font-size: clamp(1.2rem, calc(1.15rem + .26vw), 1.35rem);
+    margin-block-start: 1em;
+    max-width: 70ch;
 }
 
 footer {
-    border-top: 1px solid #d4d4d4;
-    margin-top: 20px;
-    padding-top: 5px;
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-	background-color: #030712;
-	color: #99a1af;
-    }
-
-    a {
-	color: #00bcff;
-    }
-
-    p {
-	color: #d4d4d8;
-    }
+footer a {
+    white-space: nowrap;
 }
+
+    
