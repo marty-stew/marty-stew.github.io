@@ -1,12 +1,37 @@
-* First link
-** URL for first link
-** Summary for first link
-* Second link
-** URL for second link
-** Summary for second link
-* Third link
-** URL for third link
-** Summary for third link
-* Fourth link
-** URL for fourth link
-** Summary for fourth link
+#+DESCRIPTION: Two iconic Barbie doll characters have exotic adventures and solve mysteries.
+* Hold Those Horses!
+** The girls arrive at Carson Estate for a weeklong stay with Ken's wealthy aunt. But on their very first night, a prized horse and saddle go missing.
+** 001
+* Taking the Reins
+** Everyone's a suspect, so the Barbies hunt for clues to clear their names. Are Lady Puddington's muddy shoes a sign of guilt — or just a fashion crime?
+** 002
+* Veering Off Course
+** Denholm seems awfully suspicious... until Lady Carson reveals she might have a motive. Ken and Marcus arrive in London. Cassidy makes an unexpected move.
+** 003
+* One Horse Fashion Show
+** Brooklyn and Malibu follow Cassidy to Venice, where they're pulled into a fashion-forward side quest and reunite with an old friend.
+** 004
+* As Good as Gondola
+** The teen detectives split up into three different groups: one to find Pepper, one to track down Dietrich, and one to keep an eye on Giovanni.
+** 005
+* Back in the Diamond Saddle
+** Surprising confessions come to light as Brooklyn and Malibu team up to protect precious cargo aboard a speeding train headed back to England.
+** 006
+* Down to the Wire
+** With the competition looming and Pepper still on the loose, the Carsons need another horse — and someone to ride her. The gang sets a trap for Giovanni.
+** 007
+* Jumping to Conclusions
+** The Barbies have a plan to rescue the horses, recover the saddle and win the championship, too. But it'll take everyone on the team to pull it off!
+** 008
+* Beach Bash Begins
+** Magic's in the air as Brooklyn and Malibu seek out a juicy new story for their hit podcast while starting summer jobs with pals Ken, Marcus and Nikki.
+** 010
+* How the Crystal Ball Bounces
+** Who swiped Martin the Magnificent's crystal? The Barbies consider their suspects while investigating why Madame Celeste is acting even odder than usual.
+** 011
+* Now You See Her
+** The plot thickens as the Barbies suspect summertime sabotage. Meanwhile, Ken finds a clue, Councilman Wynin comes clean and Warlock has a rough night.
+** 012
+* Welcome to the Fun House and Exiting the Vampire's Castle
+** Zoe's gone missing, and the mysteries are really piling up. Hoping to uncover some clues, the Barbies attend auditions to be Warlock's new assistant.
+** 013

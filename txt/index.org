@@ -1,0 +1,22 @@
+#+DESCRIPTION: An ongoing feud between the Capulets and the Montagues breaks out again on the streets of Verona. Both sides are warned by Prince Escalus that they must not disturb the peace again, on pain of death.
+* Prince Escalus
+** A young man with the misfortune of ruling over a state where two major families are locked in an unending war.
+** prince-escalus
+* Paris
+** A nobleman of Verona, close kin to the Prince and to Mercutio.
+** paris
+* Montague
+** The head of an old family of Verona.
+** montague
+* Capulet
+** The head of an old family of Verona.
+** capulet
+* Romeo
+** The only son of the Montague family of Verona.
+** romeo
+* Juliet 
+** The only child of the Capulet family. A fortnight shy of fourteen, she is an obedient child, but reveals herself to be passionate and willing to betray all that she has been brought up to when she falls in love with Romeo.
+** juliette
+* Mercutio
+** A kinsman of the Prince’s, and a close friend of Romeo’s.
+** mercutio
