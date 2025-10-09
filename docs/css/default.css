@@ -54,6 +54,12 @@ header h1 .sectionTitle {
     padding-right: 10px;
 }
 
+section {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 1rem 0;
+}
+
 article {
     padding-bottom: 1em;    
 }
