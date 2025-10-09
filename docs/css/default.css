@@ -54,7 +54,7 @@ header h1 .sectionTitle {
     padding-right: 10px;
 }
 
-section {
+.overview {
     font-size: 1.25rem;
     line-height: 1.75rem;
     margin: 1rem 0;
