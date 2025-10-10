@@ -80,39 +80,49 @@ ul {
 }
 
 ul li {
-    background-color: #d4d4d8;
-    border-radius: 5px;
     box-sizing: border-box;
-    color: #27272A;    
     display: inline-block;
     flex: 1 1 250px;
-    padding: 5px;
     text-align: center;
 }
 
 ul li a {
-    background-color: transparent;
-    border: 2px solid #737373;
-    border-color: #8c8cff;
-    border-color: #2e1065;
+    background-color: #d4d4d8;    
+    border-radius: 3px;
     box-sizing: border-box;
     color: #27272A;
     display: block;
     height: 100%;
     padding: 10px 20px 25px 20px;
+    position: relative;
     text-decoration: none;
     width: 100%;
 }
 
-.section ul li a {
-    outline: 1px solid #737373;
-    outline-color: #8c8cff;
-    outline-color: #2e1065;
-    outline-offset: -6px;
+ul li a:after {
+    border-left: 8px solid transparent;
+    border-top: 8px solid #27272a;
+    border-top: 8px solid #525252;    
+    bottom: 15px;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 20px;
+    transform: rotate(45deg);
+    width: 0;
 }
 
-ul li a:hover, ul li a:focus, ul li a:active,
-ul li:hover, ul li:focus, ul li:active {
+ul li a:before {
+    background: #525252;
+    bottom: 18px;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: 24px;
+    width: 8px;
+}
+
+ul li a:hover, ul li a:focus, ul li a:active {
     background-color: #fafafa;
     opacity: 1;
 }
@@ -136,4 +146,3 @@ footer {
 footer a {
     white-space: nowrap;
 }
-
