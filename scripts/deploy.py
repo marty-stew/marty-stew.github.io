@@ -2,24 +2,46 @@ import os
 import re
 import sys
 from datetime import datetime
+from labels import format_label
+from pathlib import Path
 from string import Template
 
 if len(sys.argv) < 2:
     print("Usage: python deploy.py <filename>")
     sys.exit(1)
 
-filename = sys.argv[1]
+current_year = datetime.now().year    
 
-folder = os.path.basename(os.path.dirname(os.path.abspath((filename))))
+filename = str(Path.home()) + '/' + sys.argv[1]
 
-if(folder == 'txt'):
-    folder = ''
+full_path = os.path.dirname(os.path.abspath((filename)))
+base_path = full_path.partition("/txt/")[0]
+folder = full_path.partition("/txt/")[2]
+if base_path.endswith("/txt"):
+    base_path = base_path.removesuffix("/txt")
 
-section = ''
-sectionlink = ''
-if(folder == 'juliette'):
-    section = 'Juliette'    
-    sectionlink = f'<a href="/{folder}/">Juliette</a>: '
+section_path = folder.split('/')
+head_title = ''
+page_title = ''
+path_so_far = '/'
+
+if section_path:
+    count = 0
+    for subfolder in section_path:
+        formatted_label = format_label(subfolder)
+        if count == 0:
+            head_title += formatted_label
+            page_title += '<a href="' + path_so_far + subfolder + '/">' + formatted_label + '</a>'
+        elif count == 1:
+            head_title += ' + '
+            head_title += formatted_label
+            page_title += ' + <a href="' + path_so_far + subfolder + '/">' + formatted_label + '</a>'            
+        else:
+            head_title += ' &gt; '
+            head_title += formatted_label
+            page_title += ' &gt; <a href="' + path_so_far + subfolder + '/">' + formatted_label + '</a>'
+        path_so_far += subfolder + '/'
+        count += 1
 
 date, summary, title = None, None, None
 
@@ -51,12 +73,12 @@ content = '\n'.join(content_lines)
 
 content = '\n<p>' + re.sub(r'\n{2,}', '</p>\n\n<p>', content.strip()) + '</p>\n'
 
-with open(os.path.expanduser('~/.marty/') + 'templates/webpage.html', 'r') as f:
+with open(base_path + '/templates/webpage.html', 'r') as f:
     template_content = f.read()
 
 template = Template(template_content)
 
-result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, section=section, sectionlink=sectionlink, title=title)
+result = template.substitute(content=content, datecreated=datecreated, datemodified=datemodified, description=description, section=head_title, page_title=page_title, title=title, current_year=current_year)
 
 filename = os.path.basename(filename)
 
@@ -65,5 +87,5 @@ if filename.endswith(".txt"):
 else:
     outputfile = filename
 
-with open(os.path.expanduser('~/.marty/docs/') + folder + '/' + outputfile + '.html', 'w') as f:
+with open(base_path + '/docs/' + folder + '/' + outputfile + '.html', 'w') as f:
     f.write(result)
