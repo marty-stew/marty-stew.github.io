@@ -31,11 +31,7 @@ if section_path:
         formatted_label = format_label(subfolder)
         if count == 0:
             head_title += formatted_label
-            page_title += '<a href="' + path_so_far + subfolder + '/">' + formatted_label + '</a>'
-        elif count == 1:
-            head_title += ' + '
-            head_title += formatted_label
-            page_title += ' + <a href="' + path_so_far + subfolder + '/">' + formatted_label + '</a>'            
+            page_title += '<a href="' + path_so_far + subfolder + '/">' + formatted_label + '</a>'            
         else:
             head_title += ' &gt; '
             head_title += formatted_label

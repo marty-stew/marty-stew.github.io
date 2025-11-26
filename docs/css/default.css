@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    border-top: 3px solid #ff0000;
     font-family: system-ui;
     font-size: 1.5rem;
     line-height: 1.75;
@@ -100,26 +101,12 @@ ul li a {
 }
 
 ul li a:after {
-    border-left: 8px solid transparent;
-    border-top: 8px solid #27272a;
-    border-top: 8px solid #525252;    
-    bottom: 15px;
-    content: "";
-    height: 0;
+    bottom: 35%;
+    color: #808080;
+    content: "\2192";
+    font-size: 17px;
     position: absolute;
-    right: 20px;
-    transform: rotate(45deg);
-    width: 0;
-}
-
-ul li a:before {
-    background: #525252;
-    bottom: 18px;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: 24px;
-    width: 8px;
+    right: 15px;
 }
 
 ul li a:hover, ul li a:focus, ul li a:active {

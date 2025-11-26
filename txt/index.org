@@ -1,4 +1,4 @@
-#+DESCRIPTION: The adventures of Marty Stew, a thrift store worker who lends himself, for free, to anyone who needs to borrow a human being for a limited amount of time.
+#+DESCRIPTION: The adventures of Marty Stew, a thrift store worker who lends himself, for free, to anyone who needs a human being for a limited period of time.
 * Juliette
 ** Marty's government-appointed girlfriend, an adjunct English professor in her early fifties.
 ** juliette

@@ -1,6 +1,7 @@
 import os
 import sys
 from datetime import datetime
+from labels import format_label
 from pathlib import Path
 from string import Template
 
@@ -14,18 +15,18 @@ def deploy_section(section):
     file = open(proj_dir + '/txt/' + section + '/index.org', 'r')
     section_index = file.readlines()
     section_path = section.split('/')
-    head_title = section_path[0].replace("-", " ").title()
+    head_title = format_label(section_path[0])
     page_title = ''
     path_so_far = '/'
     
     for folder in section_path:
-        folder_formatted = folder.replace("-", " ").title()
+        folder_formatted = format_label(folder)
         if folder != section_path[0]:
             head_title += ' &gt; ' + folder_formatted
         if folder == section_path[-1]:
-            page_title += ' &gt; ' + folder_formatted
+            page_title += folder_formatted
         else:
-            page_title += ' &gt; ' + '<a href="' + path_so_far + folder + '/">' + folder_formatted + '</a>'
+            page_title += '<a href="' + path_so_far + folder + '/">' + folder_formatted + '</a>' + ' &gt; '
         path_so_far += folder + '/'
         
     content = '<ul>\n'
