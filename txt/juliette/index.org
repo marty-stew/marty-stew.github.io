@@ -1,4 +1,4 @@
-#+DESCRIPTION: The federal government has identified Marty as a potential incel and so assigned him a girlfriend to "date" once a week.
+#+DESCRIPTION: The federal government has identified Marty as a potential incel and so assigned him a girlfriend to date once a week.
 * Conversations
 ** Discussions on life, literature, and the pursuit of happiness.
 ** conversations/
