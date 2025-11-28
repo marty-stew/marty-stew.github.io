@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    border-top: 3px solid #ff0000;
+    border-top: 3px solid #d22f27;
     font-family: system-ui;
     font-size: 1.5rem;
     line-height: 1.75;
@@ -63,6 +63,16 @@ header h1 .sectionTitle {
 
 article {
     padding-bottom: 1em;    
+}
+
+article h2 {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+}
+
+article hr {
+    margin-top: 1.25rem;
 }
 
 article p {

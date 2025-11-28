@@ -63,11 +63,18 @@ with open(filename, 'r') as file:
         if recording:
             if line.startswith('==='):
                 break
+            if line.startswith('## '):
+                line = line.replace('## ', '<h2>') + '</h2>'
+            if line.startswith('*****'):
+                line = '<hr />'
             content_lines.append(line.rstrip('\n'))
 
 content = '\n'.join(content_lines)
 
 content = '\n<p>' + re.sub(r'\n{2,}', '</p>\n\n<p>', content.strip()) + '</p>\n'
+content = content.replace('<p><hr /></p>', '<hr />')
+content = content.replace('<p><h2>', '<h2>')
+content = content.replace('</h2></p>', '</h2>')
 
 with open(base_path + '/templates/webpage.html', 'r') as f:
     template_content = f.read()
